@@ -3,6 +3,10 @@
 # Create builder user
 useradd builder
 
+# Setup aur folder
+mkdir /iso/aur
+chown builder /iso/aur
+
 # Build the ISO file
 cd /iso
 runuser -l builder -c './aur.sh'
