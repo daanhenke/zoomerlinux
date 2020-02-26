@@ -8,11 +8,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - run: ls out
       - run: pwd
       - run: ls .
       - name: Build ISO
         run: docker-compose up
+      - run: ls out
       - name: Rename ISO (Hack)
         run: mv out/archlinux-*.iso out/archlinux.iso
       - name: Upload artifacts
