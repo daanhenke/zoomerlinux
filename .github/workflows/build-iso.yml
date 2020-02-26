@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - run: pwd
       - name: Build ISO
         run: docker-compose up
       - run: ls ./
