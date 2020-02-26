@@ -1,8 +1,12 @@
 #!/bin/sh
 
+# Create builder user
+useradd builder
+
 # Build the ISO file
-/iso/build.sh -v
+cd /iso
+runuser -l builder -c 'aur.sh'
+build.sh -v
 
 # Copy ISO to output volume
-ls /out
-cp /out/* /dist
+cp /iso/out/* /dist
