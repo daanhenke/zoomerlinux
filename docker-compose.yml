@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  isobuilder:
+    build: .
+    volumes:
+      - ./out:/iso/out
+    privileged: true

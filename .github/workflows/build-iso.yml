@@ -1,0 +1,14 @@
+name: Build ISO
+on: [push]
+
+jobs:
+  build:
+    name: Build ISO file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: docker-compose up
+      - uses: actions/upload-artifact@v1
+        with:
+          name: iso
+          path: out/archlinux*.iso
