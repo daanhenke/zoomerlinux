@@ -83,9 +83,20 @@ xl2tpd
 # Zoomer
 # ------------
 
+# Core
+base-devel
+git
+
+# AUR (Have to be inserted into aur.sh aswel)
+yay-bin
+# plymouth
+
+# Desktop Environment
 xf86-video-intel
 xorg-server
 lightdm
+
+# Debug
 lightdm-gtk-greeter
 i3-gaps
 xterm
