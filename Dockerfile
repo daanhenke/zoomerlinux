@@ -3,6 +3,7 @@ FROM archlinux/base:latest
 RUN pacman --noconfirm -Sy base base-devel archiso
 
 COPY iso /iso
+COPY entrypoint.sh /entrypoint.sh
 
-CMD [ "/iso/build.sh", "-v" ]
+CMD [ "/entrypoint.sh" ]
 ENTRYPOINT [ "/bin/bash" ]

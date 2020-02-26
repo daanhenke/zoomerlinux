@@ -14,7 +14,7 @@ jobs:
       - run: ls ./
       - run: ls ./dist
       - name: Rename ISO (Hack)
-        run: mv out/archlinux-*.iso out/archlinux.iso
+        run: mv dist/archlinux-*.iso dist/archlinux.iso
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:
@@ -36,6 +36,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./out/archlinux.iso
+          asset_path: ./dist/archlinux.iso
           asset_name: archlinux.iso
           asset_content_type: application/octet-stream
