@@ -1,6 +1,10 @@
 FROM archlinux/base:latest
 
-RUN pacman --noconfirm -Sy base base-devel archiso
+# Install core dependencies
+RUN pacman --noconfirm -Sy base base-devel archiso git
+
+# Create builder user
+RUN useradd builder
 
 COPY iso /iso
 COPY entrypoint.sh /entrypoint.sh

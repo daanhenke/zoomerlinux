@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Create builder user
-useradd builder
-
 # Setup aur folder
 mkdir /iso/aur
 chown builder /iso/aur
