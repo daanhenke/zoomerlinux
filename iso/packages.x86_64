@@ -78,3 +78,14 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
+
+# ------------
+# Zoomer
+# ------------
+
+xf86-video-intel
+xorg-server
+lightdm
+lightdm-gtk-greeter
+i3-gaps
+xterm
