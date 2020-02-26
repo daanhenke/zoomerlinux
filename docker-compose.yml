@@ -4,5 +4,5 @@ services:
   isobuilder:
     build: .
     volumes:
-      - ./out:/iso/out
+      - ./dist:/iso/out
     privileged: true
