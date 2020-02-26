@@ -9,7 +9,14 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
-chmod 700 /root
+chmod 700 -R /root
+
+chown root:root -R /etc/sudoers.d
+
+useradd -m -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /bin/zsh live
+echo live:zoomer | chpasswd
+echo root:zoomer | chpasswd
+chown -R live /home/live
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
@@ -20,4 +27,6 @@ sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 systemctl enable pacman-init.service choose-mirror.service
-systemctl set-default multi-user.target
+
+systemctl set-default graphical.target
+systemctl enable lightdm.service
