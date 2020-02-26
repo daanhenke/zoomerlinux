@@ -1,1 +1,1 @@
-live ALL=(ALL) ALL
+live ALL=(ALL) NOPASSWD:ALL
