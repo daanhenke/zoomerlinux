@@ -17,7 +17,7 @@ jobs:
           path: out
       - name: Create GitHub release
         id: create_release
-        uses: actions/upload-release@v1
+        uses: actions/github-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
